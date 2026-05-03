@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import './App.css'
 import Home from './pages/Home'
 import Notes from './pages/Notes'
@@ -8,10 +9,20 @@ function App() {
 
   // Simple routing
   if (currentPage === 'notes') {
-    return <Notes />
+    return (
+      <>
+        <Notes />
+        <Analytics />
+      </>
+    )
   }
 
-  return <Home />
+  return (
+    <>
+      <Home />
+      <Analytics />
+    </>
+  )
 }
 
 export default App
