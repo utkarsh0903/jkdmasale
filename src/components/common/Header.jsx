@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Leaf } from 'lucide-react';
+import LogoImg from '../../assets/Logo.jpeg';
 
 /**
  * Header Component - Navigation header with logo and menu
@@ -31,7 +32,7 @@ export default function Header() {
           className="flex items-center gap-3 cursor-pointer"
         >
           <img 
-            src="/src/assets/Logo.jpeg" 
+            src={LogoImg} 
             alt="JKD Masale Logo" 
             className="h-12 w-auto rounded-xl shadow-md border border-amber-100"
           />

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Leaf, Mail, Phone, MapPin } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import LogoImg from '../../assets/Logo.jpeg';
 
 /**
  * Footer Component - Website footer with links and info
@@ -43,7 +44,7 @@ export default function Footer() {
           >
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="/src/assets/Logo.jpeg" 
+                src={LogoImg} 
                 alt="Logo" 
                 className="h-10 w-auto rounded-lg brightness-110"
               />

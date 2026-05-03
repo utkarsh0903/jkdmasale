@@ -1,3 +1,10 @@
+import SambharImg from '../assets/Sambhar.jpeg';
+import ChaatImg from '../assets/Chaat.jpeg';
+import PavBhajiImg from '../assets/Pav Bhaji.jpeg';
+import PeriPeriImg from '../assets/Peri Peri.jpeg';
+import ChanaImg from '../assets/Chana.jpeg';
+import MagieImg from '../assets/Magie Masala.jpeg';
+
 export const PRODUCTS = [
   {
     id: 1,
@@ -6,7 +13,7 @@ export const PRODUCTS = [
       { size: "50g", value: 50 },
       { size: "100g", value: 100 }
     ],
-    image: "/src/assets/Sambhar.jpeg",
+    image: SambharImg,
     category: "spices",
     rating: 5.0,
     reviews: 245,
@@ -20,7 +27,7 @@ export const PRODUCTS = [
       { size: "50g", value: 50 },
       { size: "100g", value: 100 }
     ],
-    image: "/src/assets/Chaat.jpeg",
+    image: ChaatImg,
     category: "spices",
     rating: 4.9,
     reviews: 218,
@@ -34,7 +41,7 @@ export const PRODUCTS = [
       { size: "50g", value: 50 },
       { size: "100g", value: 100 }
     ],
-    image: "/src/assets/Pav Bhaji.jpeg",
+    image: PavBhajiImg,
     category: "spices",
     rating: 4.9,
     reviews: 186,
@@ -48,7 +55,7 @@ export const PRODUCTS = [
       { size: "50g", value: 50 },
       { size: "100g", value: 100 }
     ],
-    image: "/src/assets/Peri Peri.jpeg",
+    image: PeriPeriImg,
     category: "spices",
     rating: 4.8,
     reviews: 145,
@@ -62,7 +69,7 @@ export const PRODUCTS = [
       { size: "50g", value: 50 },
       { size: "100g", value: 100 }
     ],
-    image: "/src/assets/Chana.jpeg",
+    image: ChanaImg,
     category: "spices",
     rating: 4.9,
     reviews: 167,
@@ -76,7 +83,7 @@ export const PRODUCTS = [
       { size: "50g", value: 50 },
       { size: "100g", value: 100 }
     ],
-    image: "/src/assets/Magie Masala.jpeg",
+    image: MagieImg,
     category: "spices",
     rating: 5.0,
     reviews: 312,
