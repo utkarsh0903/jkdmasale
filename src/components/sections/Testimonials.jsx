@@ -9,16 +9,16 @@ import Card from '../common/Card';
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-light">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="text-center mb-12"
         >
-          <h2 className="section-title">What Our Customers Say</h2>
+          <h2 className="section-title">Happy Families</h2>
           <p className="section-subtitle">
-            Thousands of happy customers trust us for their spice needs
+            Stories of taste and tradition from our home to yours
           </p>
         </motion.div>
 
@@ -30,40 +30,37 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card>
+              <div className="bg-[#FFFDF5] p-8 rounded-3xl border border-amber-50 shadow-sm hover:shadow-xl transition-all duration-500">
                 {/* Star Rating */}
-                <div className="flex gap-1 mb-3">
+                <div className="flex gap-1 mb-4 text-[#E1AD01]">
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      size={16}
-                      className={`${
-                        i < testimonial.rating
-                          ? 'fill-accent text-accent'
-                          : 'text-gray-300'
-                      }`}
+                      size={12}
+                      fill={i < testimonial.rating ? "currentColor" : "none"}
+                      className={i < testimonial.rating ? "" : "text-gray-200"}
                     />
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-gray-700 mb-4 italic">
+                <p className="text-[#65350F]/80 mb-6 italic font-medium leading-relaxed text-base">
                   "{testimonial.text}"
                 </p>
 
                 {/* User Info */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm"
                   />
                   <div>
-                    <p className="font-bold text-dark">{testimonial.name}</p>
-                    <p className="text-xs text-gray-600">Verified Customer</p>
+                    <p className="font-black text-[#2D1B14] text-sm uppercase tracking-tighter">{testimonial.name}</p>
+                    <p className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">Verified User</p>
                   </div>
                 </div>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </div>

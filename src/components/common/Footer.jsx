@@ -25,28 +25,32 @@ export default function Footer() {
   };
 
   const socials = [
-    { icon: FaFacebook, url: '#', label: 'Facebook' },
-    { icon: FaInstagram, url: '#', label: 'Instagram' },
-    { icon: FaTwitter, url: '#', label: 'Twitter' }
+    { icon: FaFacebook, url: 'https://www.instagram.com/jkdmasale?utm_source=qr&igsh=cW1mZXQxOXJ2emtv', label: 'Facebook' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/jkdmasale?utm_source=qr&igsh=cW1mZXQxOXJ2emtv', label: 'Instagram' },
+    { icon: FaTwitter, url: 'https://www.instagram.com/jkdmasale?utm_source=qr&igsh=cW1mZXQxOXJ2emtv', label: 'Twitter' }
   ];
 
   return (
-    <footer className="bg-dark text-white mt-20">
+    <footer className="bg-[#2D1B14] text-white pt-24 pb-12">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="md:col-span-1"
           >
-            <div className="flex items-center gap-2 mb-4">
-              <Leaf size={32} className="fill-accent text-accent" />
-              <span className="font-bold text-xl">JK D Masale</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img 
+                src="/src/assets/Logo.jpeg" 
+                alt="Logo" 
+                className="h-10 w-auto rounded-lg brightness-110"
+              />
+              <span className="font-black text-xl tracking-tighter uppercase">JK D Masale</span>
             </div>
-            <p className="text-gray-400 text-sm">
-              Premium quality spices directly from the source. 100% natural, 100% pure.
+            <p className="text-gray-400 text-sm leading-relaxed font-light">
+              Preserving the heritage of authentic homemade spices. 100% natural, 100% pure, 100% love.
             </p>
           </motion.div>
 
@@ -86,8 +90,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                  +91 9876543210 (WhatsApp)
+                <a href="https://wa.me/919811330920" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  +91 9811330920 (WhatsApp)
                 </a>
               </div>
               <div className="flex items-start gap-2">
@@ -107,6 +111,8 @@ export default function Footer() {
                 <motion.a
                   key={social.label}
                   href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, color: '#D4AF37' }}
                   className="text-gray-400 transition-colors"
                   aria-label={social.label}

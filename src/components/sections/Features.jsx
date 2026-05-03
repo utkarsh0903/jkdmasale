@@ -16,16 +16,16 @@ export default function Features() {
   };
 
   return (
-    <section className="py-20 bg-light">
+    <section id="features" className="py-24 bg-[#F9F1E7]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="section-title">Why Choose Us?</h2>
+          <h2 className="section-title">The JKD Promise</h2>
           <p className="section-subtitle">
-            We pride ourselves on quality, authenticity, and customer satisfaction
+            What makes our homemade spices truly special
           </p>
         </motion.div>
 
@@ -39,20 +39,20 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="text-center h-full flex flex-col items-center">
+                <div className="bg-white p-8 rounded-3xl text-center h-full flex flex-col items-center border border-amber-100 shadow-sm hover:shadow-xl transition-all duration-500 group">
                   <motion.div
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    className="p-4 bg-gradient-to-br from-primary to-secondary rounded-lg mb-4"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="p-4 bg-[#F9F1E7] rounded-xl mb-6 border border-amber-100"
                   >
-                    <IconComponent size={32} className="text-white" />
+                    <IconComponent size={24} className="text-[#E1AD01]" />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-dark mb-2">
+                  <h3 className="text-lg font-black text-[#2D1B14] mb-3 uppercase tracking-tighter">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-[#65350F]/70 text-xs leading-relaxed font-medium">
                     {feature.description}
                   </p>
-                </Card>
+                </div>
               </motion.div>
             );
           })}

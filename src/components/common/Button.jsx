@@ -18,13 +18,13 @@ export default function Button({
   className = '',
   ...props
 }) {
-  const baseStyle = 'font-semibold rounded-lg transition-all duration-300 ease-out focus:outline-none';
+  const baseStyle = 'transition-all duration-300 ease-out focus:outline-none';
 
   const variants = {
-    primary: 'bg-primary text-white hover:bg-opacity-90 hover:shadow-lg hover:scale-105',
-    secondary: 'bg-secondary text-white hover:bg-opacity-90 hover:shadow-lg',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
-    ghost: 'text-primary hover:bg-primary hover:bg-opacity-10'
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    outline: 'btn-outline',
+    ghost: 'text-[#D4AF37] hover:bg-white/5'
   };
 
   const sizes = {

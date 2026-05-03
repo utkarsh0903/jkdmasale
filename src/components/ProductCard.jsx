@@ -10,7 +10,7 @@ import Button from './common/Button';
  */
 
 export default function ProductCard({ product }) {
-  const whatsappNumber = "919876543210"; // Updated to include country code
+  const whatsappNumber = "919811330920"; // Updated number
   const whatsappMessage = encodeURIComponent(`Hi, I'm interested in buying ${product.name}. Please provide more details.`);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
@@ -19,46 +19,52 @@ export default function ProductCard({ product }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group"
+      whileHover={{ y: -8 }}
+      className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group border border-amber-50"
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden bg-gray-100 h-48">
+      <div className="relative overflow-hidden h-48">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute top-4 right-4 bg-accent text-dark px-3 py-1 rounded-full text-sm font-bold">
-          ₹{product.price}
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent opacity-60" />
       </div>
 
       {/* Content */}
-      <div className="p-4">
-        <h3 className="text-lg font-bold text-dark mb-2 line-clamp-2">
+      <div className="p-5 relative">
+        <h3 className="text-xl font-black text-[#2D1B14] mb-2 group-hover:text-[#E1AD01] transition-colors uppercase tracking-tight">
           {product.name}
         </h3>
 
+        {/* Price List */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {product.price.map((p, i) => (
+            <span key={i} className="px-3 py-1 bg-[#FFFDF5] rounded-full text-[10px] font-black text-[#E1AD01] border border-amber-100 uppercase tracking-widest">
+              {p.size}: ₹{p.value}
+            </span>
+          ))}
+        </div>
+
         {/* Rating */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="flex gap-1">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="flex gap-0.5 text-[#E1AD01]">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                size={16}
-                className={`${
-                  i < Math.floor(product.rating)
-                    ? 'fill-accent text-accent'
-                    : 'text-gray-300'
-                }`}
+                size={12}
+                fill={i < Math.floor(product.rating) ? "currentColor" : "none"}
+                className={i < Math.floor(product.rating) ? "" : "text-gray-200"}
               />
             ))}
           </div>
-          <span className="text-sm text-gray-600">({product.reviews})</span>
+          <span className="text-[9px] text-gray-400 uppercase tracking-widest font-bold">({product.reviews})</span>
         </div>
 
-        <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-          {product.description}
+        <p className="text-[#5C4033] text-xs mb-6 line-clamp-2 font-light leading-relaxed italic">
+          "{product.description}"
         </p>
 
         {/* Order on WhatsApp Button */}
@@ -70,11 +76,11 @@ export default function ProductCard({ product }) {
         >
           <Button
             variant="primary"
-            size="md"
-            className="w-full flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] border-none"
+            size="sm"
+            className="w-full flex items-center justify-center gap-2 rounded-xl"
           >
-            <FaWhatsapp size={18} />
-            Order on WhatsApp
+            <FaWhatsapp size={16} />
+            Connect Now
           </Button>
         </a>
       </div>

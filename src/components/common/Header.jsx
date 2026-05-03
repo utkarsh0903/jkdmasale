@@ -22,16 +22,22 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed w-full top-0 z-50 bg-white shadow-md"
+      className="fixed w-full top-0 z-50 glass"
     >
-      <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <nav className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 font-bold text-2xl text-primary"
+          className="flex items-center gap-3 cursor-pointer"
         >
-          <Leaf size={32} className="fill-primary" />
-          <span>JK D Masale</span>
+          <img 
+            src="/src/assets/Logo.jpeg" 
+            alt="JKD Masale Logo" 
+            className="h-12 w-auto rounded-xl shadow-md border border-amber-100"
+          />
+          <span className="font-black text-2xl tracking-tighter text-[#2D1B14] hidden md:block">
+            JKD MASALE
+          </span>
         </motion.div>
 
         {/* Desktop Menu */}
@@ -40,8 +46,8 @@ export default function Header() {
             <motion.a
               key={link.label}
               href={link.href}
-              whileHover={{ color: '#D4AF37' }}
-              className="text-dark font-semibold transition-colors"
+              whileHover={{ color: '#E1AD01', y: -2 }}
+              className="text-[#2D1B14] font-bold transition-all uppercase text-[10px] tracking-[0.2em]"
             >
               {link.label}
             </motion.a>

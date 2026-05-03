@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { PRODUCTS } from '../../constants/products';
 import ProductCard from '../ProductCard';
 
@@ -8,16 +7,10 @@ import ProductCard from '../ProductCard';
  */
 
 export default function ProductGrid() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  
-  const categories = ['all', 'spices', 'seeds', 'powders'];
-  
-  const filteredProducts = selectedCategory === 'all'
-    ? PRODUCTS
-    : PRODUCTS.filter(p => p.category === selectedCategory);
+  const filteredProducts = PRODUCTS;
 
   return (
-    <section id="products" className="py-20 bg-white">
+    <section id="products" className="py-24 bg-white border-y border-amber-50">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -29,29 +22,6 @@ export default function ProductGrid() {
           <p className="section-subtitle">
             Handpicked, premium quality spices for your kitchen
           </p>
-        </motion.div>
-
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                selectedCategory === category
-                  ? 'bg-primary text-white shadow-lg'
-                  : 'bg-gray-200 text-dark hover:bg-gray-300'
-              }`}
-            >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </motion.button>
-          ))}
         </motion.div>
 
         {/* Product Grid */}
