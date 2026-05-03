@@ -111,3 +111,27 @@ export const FEATURES = [
     icon: "IndianRupee"
   }
 ];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Sunita Sharma",
+    text: "The Sambhar Masala is just like what my grandmother used to make. The aroma fills the entire house!",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+  },
+  {
+    id: 2,
+    name: "Rajesh Kumar",
+    text: "I've tried many brands, but JKD's Chaat Masala is on another level. Authentic and perfectly balanced.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop"
+  },
+  {
+    id: 3,
+    name: "Priya Verma",
+    text: "Pure magic in a bottle! The Magie Masala makes even the simplest vegetables taste gourmet.",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+  }
+];
