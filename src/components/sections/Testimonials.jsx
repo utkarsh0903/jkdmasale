@@ -8,7 +8,11 @@ const GAP = 24;
 const CARD_STEP = CARD_WIDTH + GAP;
 const SPEED = 0.45;
 const N = TESTIMONIALS.length;
-const LOOPED = [...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS];
+// 7 copies to ensure infinite scroll never hits the physical edge even on ultrawide monitors
+const LOOPED = [
+  ...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS, 
+  ...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS, ...TESTIMONIALS
+];
 
 function Stars({ rating, size = 14 }) {
   return (
@@ -167,8 +171,8 @@ export default function Testimonials() {
   useEffect(() => {
     const el = trackRef.current;
     if (el) {
-      el.scrollLeft = singleW;
-      updateDot(singleW);
+      el.scrollLeft = singleW * 3;
+      updateDot(singleW * 3);
     }
   }, [singleW]);
 
@@ -189,8 +193,8 @@ export default function Testimonials() {
     el.scrollLeft += SPEED;
 
     // Seamless loop
-    if (el.scrollLeft >= singleW * 2) el.scrollLeft -= singleW;
-    if (el.scrollLeft < singleW * 0.2) el.scrollLeft += singleW;
+    if (el.scrollLeft >= singleW * 4) el.scrollLeft -= singleW;
+    if (el.scrollLeft < singleW * 2) el.scrollLeft += singleW;
 
     updateDot(el.scrollLeft);
     rafRef.current = requestAnimationFrame(tick);
@@ -212,8 +216,8 @@ export default function Testimonials() {
     el.scrollTo({ left: target, behavior: 'smooth' });
 
     setTimeout(() => {
-      if (el.scrollLeft >= singleW * 2) el.scrollLeft -= singleW;
-      if (el.scrollLeft < singleW * 0.3) el.scrollLeft += singleW;
+      if (el.scrollLeft >= singleW * 4) el.scrollLeft -= singleW;
+      if (el.scrollLeft < singleW * 2) el.scrollLeft += singleW;
       updateDot(el.scrollLeft);
       paused.current = false;
     }, 480);
@@ -224,7 +228,7 @@ export default function Testimonials() {
     if (!el) return;
 
     paused.current = true;
-    const target = singleW + i * CARD_STEP;
+    const target = (singleW * 3) + i * CARD_STEP;
     el.scrollTo({ left: target, behavior: 'smooth' });
     setActiveDot(i);
 
@@ -246,8 +250,8 @@ export default function Testimonials() {
     const newScroll = dragScroll.current + (dragX.current - e.clientX);
     el.scrollLeft = newScroll;
 
-    if (el.scrollLeft >= singleW * 2) el.scrollLeft -= singleW;
-    if (el.scrollLeft < 0) el.scrollLeft += singleW;
+    if (el.scrollLeft >= singleW * 4) el.scrollLeft -= singleW;
+    if (el.scrollLeft < singleW * 2) el.scrollLeft += singleW;
 
     updateDot(el.scrollLeft);
   };
