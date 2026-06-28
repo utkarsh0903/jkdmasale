@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Leaf, Star, Truck, IndianRupee } from 'lucide-react';
+import { Leaf, Star, IndianRupee } from 'lucide-react';
 import { FEATURES } from '../../constants/products';
 import Card from '../common/Card';
 
@@ -11,12 +11,11 @@ export default function Features() {
   const iconMap = {
     Leaf,
     Star,
-    Truck,
     IndianRupee
   };
 
   return (
-    <section id="features" className="py-24 bg-[#F9F1E7]">
+    <section id="about" className="py-24 bg-[#F9F1E7]">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0 }}
@@ -29,7 +28,7 @@ export default function Features() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {FEATURES.map((feature, index) => {
             const IconComponent = iconMap[feature.icon];
             return (

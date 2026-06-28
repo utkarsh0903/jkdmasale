@@ -34,10 +34,13 @@ export default function ProductCard({ product }) {
       </div>
 
       {/* Content */}
-      <div className="p-5 relative">
-        <h3 className="text-xl font-black text-[#2D1B14] mb-2 group-hover:text-[#E1AD01] transition-colors uppercase tracking-tight">
-          {product.name}
-        </h3>
+      <div className="p-5 relative flex flex-col">
+        {/* Fixed-height name area so long names don't shift layout */}
+        <div className="min-h-[3.2rem] mb-2">
+          <h3 className="text-base font-black text-[#2D1B14] group-hover:text-[#E1AD01] transition-colors uppercase tracking-tight leading-tight line-clamp-2">
+            {product.name}
+          </h3>
+        </div>
 
         {/* Price List */}
         <div className="flex flex-wrap gap-2 mb-4">

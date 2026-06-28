@@ -9,7 +9,7 @@ import { staggerContainerVariants, slideUpVariants } from '../../utils/animation
 export default function Hero() {
   return (
     <section
-      id="hero"
+      id="home"
       className="min-h-screen bg-[#FFFDF5] flex items-center justify-center px-6 pt-24 overflow-hidden relative"
     >
       {/* Decorative background elements */}
@@ -59,7 +59,7 @@ export default function Hero() {
             <Button
               variant="primary"
               size="lg"
-              className="text-sm w-full md:w-48 shadow-xl"
+              className="text-sm w-full md:w-56 shadow-xl"
             >
               Shop Spices
             </Button>
@@ -68,7 +68,7 @@ export default function Hero() {
             <Button
               variant="secondary"
               size="lg"
-              className="text-sm w-full md:w-48 shadow-xl"
+              className="text-sm w-full md:w-56 shadow-xl"
             >
               Why Choose Us
             </Button>

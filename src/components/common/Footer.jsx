@@ -12,16 +12,17 @@ export default function Footer() {
 
   const footerLinks = {
     'Quick Links': [
-      { label: 'Home', href: '#' },
-      { label: 'Products', href: '#' },
-      { label: 'About Us', href: '#' },
-      { label: 'Contact', href: '#' }
+      { label: 'Home', href: '#home' },
+      { label: 'About Us', href: '#about' },
+      { label: 'Products', href: '#products' },
+      { label: 'Reviews', href: '#reviews' },
+      { label: 'Contact', href: 'https://wa.me/919811330920', target: '_blank' }
     ],
     'Policy': [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms & Conditions', href: '#' },
-      { label: 'Shipping Policy', href: '#' },
-      { label: 'Return Policy', href: '#' }
+      { label: 'Privacy Policy', href: '#', disabled: true },
+      { label: 'Terms & Conditions', href: '#', disabled: true },
+      { label: 'Shipping Policy', href: '#', disabled: true },
+      { label: 'Return Policy', href: '#', disabled: true }
     ]
   };
 
@@ -43,9 +44,9 @@ export default function Footer() {
             className="md:col-span-1"
           >
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src={LogoImg} 
-                alt="Logo" 
+              <img
+                src={LogoImg}
+                alt="Logo"
                 className="h-10 w-auto rounded-lg brightness-110"
               />
               <span className="font-black text-xl tracking-tighter uppercase">JK D Masale</span>
@@ -66,12 +67,20 @@ export default function Footer() {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-accent transition-colors text-sm"
-                    >
-                      {link.label}
-                    </a>
+                    {link.disabled ? (
+                      <span className="text-gray-500 cursor-not-allowed text-sm">
+                        {link.label}
+                      </span>
+                    ) : (
+                      <a
+                        href={link.href}
+                        target={link.target || '_self'}
+                        rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+                        className="text-gray-400 hover:text-accent transition-colors text-sm"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -87,17 +96,17 @@ export default function Footer() {
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-center gap-2">
                 <Mail size={16} />
-                <span>info@jkdmasale.com</span>
+                <span>jkdmasale@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={16} />
-                <a href="https://wa.me/919811330920" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                  +91 9811330920 (WhatsApp)
+                <a href="https://wa.me/9811311505" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  +91 9811311505
                 </a>
               </div>
               <div className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
-                <span>123 Spice Lane, Delhi, India</span>
+                <span>A-789/3, Shastri Nagar, New Delhi, 110052, Delhi, India</span>
               </div>
             </div>
           </motion.div>
